@@ -228,8 +228,12 @@ const App = () => {
       });
       setSummary({ content: result.text });
     } catch (error) {
-      console.error(error);
-      alert("Hubo un error al generar el resumen. Por favor, inténtalo de nuevo.");
+      console.error("Error al generar el resumen:", error);
+      let errorMessage = "Hubo un error al generar el resumen. Por favor, inténtalo de nuevo.";
+      if (error instanceof Error && (error.message.includes('API key not valid') || error.message.includes('API key is invalid'))) {
+          errorMessage = "Error: La clave de la API no es válida. Por favor, verifica la configuración de las variables de entorno en Vercel.";
+      }
+      alert(errorMessage);
     } finally {
       setLoading(false);
     }
