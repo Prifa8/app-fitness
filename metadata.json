@@ -1,0 +1,5 @@
+{
+  "name": "Registro de Progreso Fitness",
+  "description": "Una aplicación completa para registrar el progreso físico semanal, incluyendo peso, comidas, sentimientos, fuerza, medidas y actividades diarias, con resúmenes generados por IA.",
+  "requestFramePermissions": []
+}
